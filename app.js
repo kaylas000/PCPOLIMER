@@ -96,12 +96,12 @@
   ];
 
   var GALLERY = [
-    { img: "https://image.qwenlm.ai/generated-images/c426f46a-0dc7-4800-ad6c-b8b22ba86cd1/_result.png", caption: "Метизы и профили после камеры", ral: "разные RAL", hex: "#8f8f8f" },
-    { img: "https://image.qwenlm.ai/generated-images/5ff11916-4fc6-4644-ad47-f27df32ae04a/_result.png", caption: "Велорама, глянец", ral: "RAL 2004", hex: "#e25303" },
-    { img: "https://image.qwenlm.ai/generated-images/5d6976e4-3641-4297-ba4d-b3c168368f07/_result.png", caption: "Напыление в камере", ral: "RAL 5015", hex: "#2271b3" },
-    { img: "https://image.qwenlm.ai/generated-images/18ed25a1-759e-49df-aa19-411265aa24d0/_result.png", caption: "Полимеризация, 200 °C", ral: "режим ПЕЧЬ", hex: "#e25303" },
-    { img: "https://image.qwenlm.ai/generated-images/1c902020-7a2e-4967-9793-baf4e60c3ca0/_result.png", caption: "Секция ворот, шагрень мелкая", ral: "RAL 7016", hex: "#383e42" },
-    { img: "https://image.qwenlm.ai/generated-images/bbe21bee-1817-4ff0-bf2a-b9022e862921/_result.png", caption: "Веер выкрасов RAL", ral: "1000+ цветов", hex: "#ff6a2b" }
+    { img: "img/qc.webp", caption: "Метизы и профили после камеры", ral: "разные RAL", hex: "#8f8f8f" },
+    { img: "img/bike.webp", caption: "Велорама, глянец", ral: "RAL 2004", hex: "#e25303" },
+    { img: "img/spray.webp", caption: "Напыление в камере", ral: "RAL 5015", hex: "#2271b3" },
+    { img: "img/cure.webp", caption: "Полимеризация, 200 °C", ral: "режим ПЕЧЬ", hex: "#e25303" },
+    { img: "img/prep.webp", caption: "Секция ворот, шагрень мелкая", ral: "RAL 7016", hex: "#383e42" },
+    { img: "img/ral-fan.webp", caption: "Веер выкрасов RAL", ral: "1000+ цветов", hex: "#ff6a2b" }
   ];
 
   /* станции технологии — один параметр на шаг (STRUCTURE, акт 04) */
@@ -488,7 +488,7 @@
   if (gl) {
     gl.innerHTML = GALLERY.map(function (g, i) {
       return '<figure class="gl-item">' +
-        '<div class="ph"><img src="' + g.img + '" alt="' + g.caption + '" loading="lazy"><i class="ph-tag" style="background:' + g.hex + '">' + g.ral + "</i></div>" +
+        '<div class="ph"><img src="' + g.img + '" width="1200" height="900" alt="' + g.caption + '" loading="lazy"><i class="ph-tag" style="background:' + g.hex + '">' + g.ral + "</i></div>" +
         "<figcaption><h3>" + g.caption + '</h3><span class="gl-tag"><i style="background:' + g.hex + '"></i>смена 2 · проба №' + String(i + 1).padStart(3, "0") + "</span></figcaption></figure>";
     }).join("");
     $$(".gl .ph img").forEach(function (img) {
