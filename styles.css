@@ -78,7 +78,10 @@ body {
   font-family: var(--font-body);
   font-size: clamp(1rem, 0.94rem + 0.25vw, 1.08rem);
   line-height: 1.55;
+  /* clip вместо hidden: не создаёт scroll-контейнер на body,
+     иначе position: sticky у панели ломается в Safari (pattern: projects/ивакуатор) */
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 img { max-width: 100%; }
@@ -206,7 +209,7 @@ a { color: inherit; }
   justify-content: space-between;
   gap: 1rem;
   padding: 0.6rem var(--pad);
-  background: rgba(23, 24, 28, 0.92);
+  background: var(--coal);
   border-bottom: 1px solid var(--steel);
 }
 .pg-brand {
